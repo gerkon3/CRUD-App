@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700');
+@font-face{
+    font-family: 'MuseoSansMedium';
+    src: url('../fonts/MuseoSansMedium.eot');
+    src: url('../fonts/MuseoSansMedium.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/MuseoSansMedium.woff') format('woff'),
+    url('../fonts/MuseoSansMedium.ttf') format('truetype');
+}
+main{
+    margin-top: 60px;
+    padding-top: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 122px;
+    padding-bottom: 60px;
+}
+main p>span{
+    font-weight: bold;
+}
+.card{
+    display: flex;
+    margin: 0 auto 15px;
+    max-width: 650px;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.12), 0 3px 4px rgba(0,0,0,0.24);
+    border-radius: 2px;
+    border: 1px solid #3399CC;
+    padding: 15px;
+    animation: fadeIn .5s ease-in;
+}
+@keyframes fadeIn{ 
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.card-number{
+    position: absolute;
+    color: #fff;
+    background-color: #3399CC;
+    font-family: 'MuseoSansMedium';
+    font-size: 13px;
+    padding: 2px 5px;
+    border-radius: 50%;
+}
+.card-logo{
+    align-self: center;
+    max-width: 180px;
+    width: 100%;
+    height: auto;
+}
+.card-title{
+    width: 100%;
+    position: relative;
+}
+.card h1{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    color: #3399CC;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 125px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.card-buttons{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.card-buttons button{
+    margin-left: 5px;
+}
+.btn:hover{
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.btn{
+    background-color: #3399CC;
+    border-radius: 4px;
+    font-family: 'MuseoSansMedium';
+    color: #FFF;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-style: none;
+}
+.icon{
+    background-image: url('../img/icons.png');
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+}
+.eye{
+    background-position: -14px 0;
+}
+.edit{
+    background-position: -28px 0;
+}
+.remove{
+    background-position: -42px 0;
+}
+.back{
+    background-position: -56px 0;
+}
+.eye, .edit, .remove{
+    margin-left: 8px;
+}
+.back{
+    margin-right: 8px;
+}
+.load-more{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 15px 0 0;
+    background-color: #3399CC;
+    border-radius: 4px;
+    font-family: 'MuseoSansMedium';
+    color: #FFF;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-style: none;
+}
+.background{
+    background: rgba(102, 102, 102, 0.5);
+    max-width: 100%;
+    max-height: 100%;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    overflow-y: auto;
+    display: flex;
+}
+.modal{
+    width: 682px;
+    height: auto;
+    position: relative;
+    margin: auto;
+    align-self: center;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.12), 0 3px 4px rgba(0,0,0,0.24);
+    border-radius: 4.8px;
+    border: 1px solid #3399CC;
+    background: #fff;
+    animation-duration: 0.50s;
+    animation-fill-mode: both;
+    animation-name: fadeInDown;
+}
+@keyframes fadeInDown{
+    0%{                
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100%{  
+        opacity: 1;
+        transform: none;
+    }
+}
+.hide{
+    animation-name: fadeInUp;
+}
+@keyframes fadeInUp{
+    0%{      
+        opacity: 1;
+        transform: none;
+    }
+    100%{  
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}
+.form-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    border-bottom: 1px solid #e9ecef;
+}
+.form-title{
+    color: #39c;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    margin: 0;
+}
+.cross{
+    font-size: 24px;
+    line-height: 1;
+    font-family: 'MuseoSansMedium';
+    font-weight: 700;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+    cursor: pointer;
+}
+.cross:hover{
+    color: #000;
+    opacity: .75;
+}
+.form-body{
+    padding: 16px 16px 0;
+}
+.form-body label{
+    font-family: 'MuseoSansMedium';
+    font-size: 16px;
+    font-weight: 700;
+    color: #212529;
+}
+.form-body input, .form-body textarea{
+    margin: 16px 0;
+}
+.form-input{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px;
+    font-family: 'MuseoSansMedium';
+    font-size: 16px;
+    font-weight: 500;
+    color: #212529;
+    border: 1px solid #3399CC;
+    border-radius: 2px;
+    outline: none;
+}
+.url-input{
+    display: flex;
+}
+.url-input p{
+    font-family: 'MuseoSansMedium';
+    font-size: 16px;
+    margin: 23px 2px 0 0;
+}
+.form-footer{
+    padding: 16px;
+    border-top: 1px solid #E9ECEF;
+    text-align: right;
+}
+.form-footer button{
+    margin-left: 5px;
+}
+.close-btn{
+    background-color: #EFEFEF;
+    border-radius: 2px;
+    font-family: 'MuseoSansMedium';
+    color: #101010;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-style: none;
+}
+.close-btn:hover{
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.edit-form form{
+    padding-bottom: 16px;
+}
+.save-changes-block{
+    display: flex;
+}
+.save-changes-block p{
+    margin: 8px 0 0 10px;
+    color: green;
+}
+.hideSuccess{
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    animation-name: fadeSucces;
+}
+.delete-modal{
+    text-align: center;
+    padding-bottom: 16px;
+}
+.delete-modal p{
+    font-family: 'MuseoSansMedium';
+    font-size: 16px;
+    font-weight: 500;
+    color: #212529;
+    margin-top: 0;
+}
+.delete-modal button:nth-of-type(1){
+    margin-right: 30px;
+}
+@keyframes fadeSucces{
+    0%{      
+        opacity: 1;
+    }
+    100%{  
+        opacity: 0;
+    }
+}
+.back-btn{
+    max-width: 682px;
+    margin: 0 auto;
+    padding: 0 15px 30px;
+}
+.back-btn button{
+    
+}
+.description-block{
+    margin: 0 auto 15px;
+    max-width: 650px;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.12), 0 3px 4px rgba(0,0,0,0.24);
+    border-radius: 2px;
+    border: 1px solid #3399CC;
+    padding: 15px;
+}
+.description-image{
+    max-width: 650px;
+    width: 100%;
+    height: auto;
+}
+.description-title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    color: #3399CC;
+}
+.description-text{
+    font-family: 'MuseoSansMedium';
+    color: #212529;
+}
+.description-url{
+    font-family: 'MuseoSansMedium';
+    color: #212529;
+}
+.spinner{
+    display: block;
+    margin: 30px auto 0;
+    width: 40px;
+    height: 40px;
+    border: 8px solid #3399CC;;
+    border-radius: 50%;
+    border-top-color: #FFF;
+    position: relative;
+    animation: 2s spinner infinite linear;
+}
+@keyframes spinner{
+    from{transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+@media (max-width: 720px){
+    .card{
+        display: block;
+    }
+    .card-logo{
+        display: block;
+        margin: 0 auto;
+    }
+    .card h1{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        top: 0;
+        transform: none;
+    }
+    .card-buttons{
+        position: relative;
+        text-align: center;
+    }
+}
+@media (max-width: 344px){
+    .btn-name{
+        display: none;
+    }
+    .eye, .edit, .remove{
+        margin-left: 0;
+    }
+}
+@media (max-width: 740px){
+    .back-btn{
+        padding: 0 0 30px;
+    }
+}

@@ -1,0 +1,20 @@
+footer{
+    font-family: 'MuseoSansMedium';
+    font-size: 16px;
+    color: #212529;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+footer img{
+    max-width: 284px;
+    width: 100%;
+    height: auto;
+}
+footer p{
+    margin: 0;
+    padding: 15px 0;
+}
