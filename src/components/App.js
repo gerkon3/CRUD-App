@@ -60,18 +60,40 @@ class App extends Component{
                 url: document.getElementById('url').value
             })
         })
-        .then(res => res.json());
+        .then(res => res.json())
+        .then(json => {
+            this.setState((prev) => {
+                return {length: prev.length + 1};
+            });
+            if(this.state.limit >= this.state.length){
+                let {items} = this.state;
+                items.push(json);
+                this.setState({items});
+            };
+        });
         event.preventDefault();
         return false;
     }
     deletePost(id){
-        this.setState({showDeleteModal: false});
         document.body.removeAttribute("style");
         fetch('http://localhost:3000/items/'+id, {
             method: 'DELETE',
             headers: {'Content-Type': 'application/json'}
         })
-        .then(res => res.json());
+        .then(res => res.json())
+        .then(json => {
+            this.setState((prev) => {
+                return {length: prev.length - 1};
+            });
+            this.setState({items: this.state.items.filter(post => post.id !== id)});
+            if(this.state.length == this.state.limit - 5){
+                this.setState((prev) => {
+                    if(this.state.limit > 5){
+                        return {limit: prev.limit - 5};
+                    };
+                });
+            };
+        });
     }
     editName(id, e){
         fetch('http://localhost:3000/items/'+id, {
@@ -81,7 +103,13 @@ class App extends Component{
                 name: document.getElementById('editName').value
 	       })
         })
-        .then(res => res.json());
+        .then(res => res.json())
+        .then(json => {
+            let {items} = this.state;
+            let position = items.findIndex(post => post.id === id);
+            items[position] = json;
+            this.setState({items});
+        });
         this.setState({successName: true});
         setTimeout(
             function() {
@@ -218,7 +246,7 @@ class App extends Component{
     showDelete(id){
         this.setState({hide: false});
         this.setState({showDeleteModal: true});
-        this.setState({deleteId: () =>{this.deletePost(id)}});
+        this.setState({deleteId: () =>{this.deletePost(id); this.closeBtn()}});
         document.body.setAttribute("style", "overflow:hidden;");
     }
     closeBtn(){
@@ -499,8 +527,10 @@ class App extends Component{
         this.setState({isLoading: true});
         this.request();
     }
-    componentDidUpdate(){
-        this.request();
+    componentDidUpdate(prevProps, prevState){
+        if(prevState.limit !== this.state.limit){
+            this.request();
+        }
     }
     render(){
         return(
