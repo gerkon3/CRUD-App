@@ -1,30 +1,30 @@
-# CRUD-App
+# CRUD-приложение
 
-CRUD (Create, Read, Update, Delete) application. Made with React.js and JSON-server (without any CSS frameworks).
+CRUD (Create, Read, Update, Delete) приложение. Создано с помощью React.js и JSON-server (без использования CSS-фреймворков).
 
-## Installing
+## Установка
 
-#### 1) Download project folder:
-- use Git Bash:
+#### 1) Скачать папку с проектом:
+- используйте Git Bash:
 ```
 git clone https://github.com/gerkon3/CRUD-App.git
 ```
-#### or
-- download ZIP
-#### 2) Open downloaded folder in Node.js:
+#### или
+- скачайте ZIP-архив
+#### 2) Открыть скачанную папку в Node.js
 ```
 cd CRUD-App
 ```
-#### or (if you downloaded ZIP)
+#### или (если скачали ZIP-архив)
 ```
 cd CRUD-App-master
 ```
-#### 3) Install node_modules in downloaded folder:
+#### 3) Установить node_modules в скачанную папку:
 ```
 npm install
 ```
-#### 4) Run application:
+#### 4) Запустить приложение:
 ```
 npm start
 ```
-#### 5) Done!
+#### 5) Готово!
